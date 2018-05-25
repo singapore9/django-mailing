@@ -15,7 +15,7 @@ class MailerMissingSubjectError(Exception):
     def __init__(self, value=None):
         self.value = value
     def __str__(self):
-        return repr(self.value if value else '')
+        return repr(self.value if self.value else '')
 
 def send_email_default(*args, **kwargs):
     send_email(args[3],args[0],args[1], from_email=args[2], category='django core email')
